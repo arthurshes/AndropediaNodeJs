@@ -1,0 +1,26 @@
+// const express = require('express')
+// const router = express.Router()
+// const fastify = require('fastify')({logger:true})
+// const userController = require('../controllers/user.controller')
+
+
+// fastify.post("/signIn/email",userController.emailSignIn)
+// fastify.post("/userInfo/send",userController.getUserInfo)
+// fastify.post("/userInfo/update",userController.updateUserInfo)
+// fastify.get("/userInfo/get",userController.sendUserInfoForClient)
+// fastify.post("/signIn/recover",userController.recoverPassword)
+// fastify.post("/courseBuy/send",userController.getBuyCourse)
+// fastify.post("/subscribe/send",userController.getBuySubscribe)
+// fastify.post("/themeBuy/send",userController.getBuyThemes)
+// fastify.post("/subscribe/check",userController.checkUserSubcribe)
+// fastify.get("/courseBuy/check",userController.checkUserCoursesBuy)
+// fastify.get("/themeBuy/check",userController.checkUserThemesBuy)
+// fastify.get("/subscribe/get",userController.getMySubcribe)
+// fastify.post("/promo/send",userController.getAndCheckPromoCode)
+// fastify.post("/promo/check",userController.checkPromoCodeSubActual)
+// fastify.post("/userInfo/strikeMode",userController.strikeModeUserCheck)
+// fastify.post("/theme/checkTerm",userController.checkTermUserTheme)
+// fastify.post("/progress/update",userController.getUserProgress)
+// fastify.get("/test/stress",userController.stressTest)
+
+// module.exports = fastify
