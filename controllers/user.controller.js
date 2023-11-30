@@ -70,28 +70,37 @@ const userController = {
         try{
             const api_key = req.headers.api_key
             if(api_key===process.env.HEADER){
-                const { name,image,token,userlanguage,andropointCount,lastOnlineDate,strikeModeDay } = req.body
-                const getSql = "select * from user_infos where token = ?"
-                const [resul,fails] = await pool.query(getSql,[token])
-                if(resul!=null){
-                    const sqlUpdate = "update user_infos set name = ?,image = ?,userlanguage = ?,andropointCount = ?,lastOnlineDate = ? where token = ?"
-                    const [ras,feai] = await pool.query(sqlUpdate,[name,image,userlanguage,andropointCount,lastOnlineDate,token])
-                    res.send({
-                     status: true,
-                     message: "success update userInfo",
-                     codeAnswer: 212
-                    })
-                    res.status(200)
-                }else{
-                 const sql = "insert into user_infos (token,name,image,userlanguage,andropointCount,lastOnlineDate) values (?,?,?,?,?,?,?)"
-                 const [rows,fields] = await pool.query(sql,[token,name,image,userlanguage,andropointCount,lastOnlineDate])
+                const { name,token } = req.body
+     
+                const [rows,fields] = await pool.query("select * from user_infos where token = ?",[token])
+                // if(resul!=null){
+                //     const sqlUpdate = "update user_infos set name = ?,image = ?,userlanguage = ?,andropointCount = ?,lastOnlineDate = ? where token = ?"
+                //     const [ras,feai] = await pool.query(sqlUpdate,[name,image,userlanguage,andropointCount,lastOnlineDate,token])
+                //     res.send({
+                //      status: true,
+                //      message: "success update userInfo",
+                //      codeAnswer: 212
+                //     })
+                //     res.status(200)
+                // }else{
+                    console.log(`0004feug90eu0g4f4SHHUHUHUHUH ${rows}`)
+                    if(rows.length===0){
+                 const sqlCreateUser = "insert into user_infos (token,name) values(?,?)"
+                 const [rows,fields] = await pool.query(sqlCreateUser,[token,name])
                  res.send({
                   status: true,
                   message: "success save userInfo",
                   codeAnswer: 212
                  })
                  res.status(200)
+                 return
                 }
+                res.send({
+                    status: true,
+                    message: "success save userInfo",
+                    codeAnswer: 212
+                   })
+                   res.status(200)
             }
         }catch(error){
             console.log(error)
