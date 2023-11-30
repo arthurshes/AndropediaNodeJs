@@ -73,7 +73,7 @@ const userController = {
                 const { name,image,token,userlanguage,andropointCount,lastOnlineDate,strikeModeDay } = req.body
                 const getSql = "select * from user_infos where token = ?"
                 const [resul,fails] = await pool.query(getSql,[token])
-                if(resul[0].length!=0){
+                if(resul!=null){
                     const sqlUpdate = "update user_infos set name = ?,image = ?,userlanguage = ?,andropointCount = ?,lastOnlineDate = ? where token = ?"
                     const [ras,feai] = await pool.query(sqlUpdate,[name,image,userlanguage,andropointCount,lastOnlineDate,token])
                     res.send({
