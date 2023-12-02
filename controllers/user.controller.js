@@ -669,13 +669,13 @@ const userController = {
                const sqlSearchUser = "select * from user_infos where token = ?"
                const [rows,fields] = await pool.query(sqlSearchUser,[token])
                if(rows[0].promoCode!=null){
+                const term = 3
                 const purchaseDate = new Date(dateApi)
                 const currentDate = new Date()
                 const diffTime = Math.abs(currentDate - purchaseDate)
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
                 const endDate = new Date(purchaseDate);
                 endDate.setDate(purchaseDate.getDate() + term);
-                const term = 3
                 if (diffDays > term) {
                     console.log("Срок подписки истек")
                     res.send({
