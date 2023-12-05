@@ -11,6 +11,64 @@ const moment = require('moment')
 // createConntect()
 const cacheControll = require('../utils/cacheControl')
 const userController = {
+    deleteUserInfo:async(req,res)=>{
+        try{
+            const api_key = req.headers.api_key
+            console.log(req.headers.api_key)
+            if(api_key===process.env.HEADER){
+                const { token } = req.body
+                const [rows,fields] = await pool.query("select * from emails_table where token = ?",[token])
+                const [subsc,failse] = await pool.query("select * from user_subscribes where token = ?",[token])
+                const cachedSubscribes = await cacheControll.getCache(`subscribes-${token}`)
+                const [coursesBUy,failes] = await pool.query("select * from user_courseBuy where token = ?",[token])
+                const termCache = await cacheControll.getCache(`termhourse-${token}`)
+                 if(rows[0]!=null){
+                    if(termCache){
+                        await cacheControll.deleteCache(`termhourse-${token}`)
+                    }
+                    if(cacheControll){
+                        await cacheControll.deleteCache(`subscribes-${token}`)
+                    }
+                    if(subsc[0]!=null){
+                        const  [reslt234,fie432l] = await pool.query("delete from user_subscribes where token = ?",[token])
+                    }
+                     if(coursesBUy[0]!=null){
+                        await pool.query("delete from user_courseBuy where token = ?",[token])
+                     }
+                    const  [reslt,fiel] = await pool.query("delete from emails_table where token = ?",[token])
+                    const[red,fal] = await pool.query("delete from user_infos where token = ?",[token])
+                 }else{
+                    if(termCache){
+                        await cacheControll.deleteCache(`termhourse-${token}`)
+                    }
+                    if(cacheControll){
+                        await cacheControll.deleteCache(`subscribes-${token}`)
+                    }
+                    if(subsc[0]!=null){
+                        const  [reslt234,fie432l] = await pool.query("delete from user_subscribes where token = ?",[token])
+                    }
+                     if(coursesBUy[0]!=null){
+                        await pool.query("delete from user_courseBuy where token = ?",[token])
+                    }
+                    const[red,fal] = await pool.query("delete from user_infos where token = ?",[token])
+                 }
+                 res.send({
+                    codeAnswer: 212,
+                    status: true,
+                    message:"vprkepgkprekgpekrgpkerpg"
+                })
+                res.status(200)
+            }
+        }catch(error){
+            console.log(error)
+            res.send({
+                codeAnswer: 606,
+                status: false,
+                message:"gtkorkgoekgoekrgokrpetgkoprk"
+            })
+            res.status(400)
+        }
+    },
     emailSignIn: async (req,res) =>{
         try{
             const api_key = req.headers.api_key

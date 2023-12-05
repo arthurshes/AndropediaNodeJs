@@ -15,6 +15,7 @@ const timerController = require('./controllers/time.controller')
 fastify.get("/course/allCourses/get",courseControler.getAllCourse)
 fastify.get("/course/dates/get",courseControler.getAllLastUpdateDates)
 
+fastify.post("/user/account/delete",userController.deleteUserInfo)
 fastify.post("/user/signIn/email",userController.emailSignIn)
 fastify.get("/user/check/checkTerm",userController.checkHowTermUser)
 fastify.post("/user/userInfo/send",userController.getUserInfo)
