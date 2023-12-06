@@ -20,16 +20,25 @@ const userController = {
                 const [rows,fields] = await pool.query("select * from emails_table where token = ?",[token])
                 const [subsc,failse] = await pool.query("select * from user_subscribes where token = ?",[token])
                 const cachedSubscribes = await cacheControll.getCache(`subscribes-${token}`)
+                const strikeModeCache = await cacheControll.getCache(`strikeModeUsers222-${token}`)
                 const [coursesBUy,failes] = await pool.query("select * from user_courseBuy where token = ?",[token])
+                const adsLimitCache = await cacheControll.getCache(`adsViewCache-${token}`)
                 const termCache = await cacheControll.getCache(`termhourse-${token}`)
                  if(rows[0]!=null){
+                     if(strikeModeCache){
+                        await cacheControll.deleteCache(`strikeModeUsers222-${token}`)
+                     }
+
+                     if(adsLimitCache){
+                        await cacheControll.deleteCache(`adsViewCache-${token}`)
+                     }
                     if(termCache){
                         await cacheControll.deleteCache(`termhourse-${token}`)
                     }
-                    if(cacheControll){
+                    if(cachedSubscribes){
                         await cacheControll.deleteCache(`subscribes-${token}`)
                     }
-                    if(subsc[0]!=null){
+                    if(subsc[0]!=null){  
                         const  [reslt234,fie432l] = await pool.query("delete from user_subscribes where token = ?",[token])
                     }
                      if(coursesBUy[0]!=null){
@@ -38,10 +47,17 @@ const userController = {
                     const  [reslt,fiel] = await pool.query("delete from emails_table where token = ?",[token])
                     const[red,fal] = await pool.query("delete from user_infos where token = ?",[token])
                  }else{
+                    if(strikeModeCache){
+                        await cacheControll.deleteCache(`strikeModeUsers222-${token}`)
+                     }
+
+                     if(adsLimitCache){
+                        await cacheControll.deleteCache(`adsViewCache-${token}`)
+                     }
                     if(termCache){
                         await cacheControll.deleteCache(`termhourse-${token}`)
                     }
-                    if(cacheControll){
+                    if(cachedSubscribes){
                         await cacheControll.deleteCache(`subscribes-${token}`)
                     }
                     if(subsc[0]!=null){
