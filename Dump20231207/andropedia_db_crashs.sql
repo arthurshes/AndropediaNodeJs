@@ -16,31 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_courseBuy`
+-- Table structure for table `crashs`
 --
 
-DROP TABLE IF EXISTS `user_courseBuy`;
+DROP TABLE IF EXISTS `crashs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_courseBuy` (
+CREATE TABLE `crashs` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `token` text NOT NULL,
-  `courseNumber` int NOT NULL,
-  `dateBuy` text NOT NULL,
-  `promoCode` text,
-  `transactionId` text NOT NULL,
-  `andropointBuy` tinyint(1) NOT NULL,
+  `className` text NOT NULL,
+  `dateCrash` date NOT NULL,
+  `brandPhone` text NOT NULL,
+  `exception` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_courseBuy`
+-- Dumping data for table `crashs`
 --
 
-LOCK TABLES `user_courseBuy` WRITE;
-/*!40000 ALTER TABLE `user_courseBuy` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_courseBuy` ENABLE KEYS */;
+LOCK TABLES `crashs` WRITE;
+/*!40000 ALTER TABLE `crashs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `crashs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-29 17:15:49
+-- Dump completed on 2023-12-07 21:03:48

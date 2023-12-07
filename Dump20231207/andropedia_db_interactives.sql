@@ -16,28 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `promocodes_and_authors`
+-- Table structure for table `interactives`
 --
 
-DROP TABLE IF EXISTS `promocodes_and_authors`;
+DROP TABLE IF EXISTS `interactives`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `promocodes_and_authors` (
+CREATE TABLE `interactives` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `promoCode` text NOT NULL,
-  `author_name` text NOT NULL,
-  `author_token` text NOT NULL,
+  `interactiveTestId` int NOT NULL,
+  `uniqueThemeId` int NOT NULL,
+  `lastUpdateDate` date NOT NULL,
+  `taskId` int NOT NULL,
+  `taskDetailsText` text NOT NULL,
+  `language` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `promocodes_and_authors`
+-- Dumping data for table `interactives`
 --
 
-LOCK TABLES `promocodes_and_authors` WRITE;
-/*!40000 ALTER TABLE `promocodes_and_authors` DISABLE KEYS */;
-/*!40000 ALTER TABLE `promocodes_and_authors` ENABLE KEYS */;
+LOCK TABLES `interactives` WRITE;
+/*!40000 ALTER TABLE `interactives` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interactives` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-29 17:15:49
+-- Dump completed on 2023-12-07 21:03:47

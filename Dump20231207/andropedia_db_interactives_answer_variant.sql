@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_subscribes`
+-- Table structure for table `interactives_answer_variant`
 --
 
-DROP TABLE IF EXISTS `user_subscribes`;
+DROP TABLE IF EXISTS `interactives_answer_variant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_subscribes` (
+CREATE TABLE `interactives_answer_variant` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `dateBuy` text NOT NULL,
-  `term` int NOT NULL,
-  `promoCode` text,
-  `token` text NOT NULL,
-  `transactionId` text NOT NULL,
+  `interactiveTestId` int NOT NULL,
+  `taskId` int NOT NULL,
+  `text` text NOT NULL,
+  `variantId` int NOT NULL,
+  `language` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_subscribes`
+-- Dumping data for table `interactives_answer_variant`
 --
 
-LOCK TABLES `user_subscribes` WRITE;
-/*!40000 ALTER TABLE `user_subscribes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_subscribes` ENABLE KEYS */;
+LOCK TABLES `interactives_answer_variant` WRITE;
+/*!40000 ALTER TABLE `interactives_answer_variant` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interactives_answer_variant` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-29 17:15:48
+-- Dump completed on 2023-12-07 21:03:47

@@ -16,29 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `crashs`
+-- Table structure for table `interactives_correct_code`
 --
 
-DROP TABLE IF EXISTS `crashs`;
+DROP TABLE IF EXISTS `interactives_correct_code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `crashs` (
+CREATE TABLE `interactives_correct_code` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `className` text NOT NULL,
-  `dateCrash` date NOT NULL,
-  `brandPhone` text NOT NULL,
-  `exception` text NOT NULL,
+  `correctAnswer` text NOT NULL,
+  `interactiveTestId` int NOT NULL,
+  `uniqueThemeId` int NOT NULL,
+  `lastUpdateDate` date NOT NULL,
+  `taskId` int NOT NULL,
+  `language` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `crashs`
+-- Dumping data for table `interactives_correct_code`
 --
 
-LOCK TABLES `crashs` WRITE;
-/*!40000 ALTER TABLE `crashs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `crashs` ENABLE KEYS */;
+LOCK TABLES `interactives_correct_code` WRITE;
+/*!40000 ALTER TABLE `interactives_correct_code` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interactives_correct_code` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-29 17:15:49
+-- Dump completed on 2023-12-07 21:03:47
