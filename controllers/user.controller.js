@@ -190,9 +190,9 @@ const userController = {
         try{
             const api_key = req.headers.api_key
             if(api_key===process.env.HEADER){
-                const { name,image,token,userlanguage,andropointCount,strikeModeDay,isInfinity} = req.body
-                const sql = "update user_infos set name = ?,image = ?,userlanguage = ?,andropointCount = ?, isInfinity = ? where token = ?"
-                const [rows,fields] = await pool.query(sql,[name,image,userlanguage,andropointCount,isInfinity,token])
+                const { name,image,token,userlanguage,andropointCount,strikeModeDay,isInfinity,heartsCount} = req.body
+                const sql = "update user_infos set name = ?,image = ?,userlanguage = ?,andropointCount = ?, isInfinity = ?,heartsCount = ? where token = ?"
+                const [rows,fields] = await pool.query(sql,[name,image,userlanguage,andropointCount,isInfinity,heartsCount,token])
                 res.send({
                     status: true,
                     message: "success update userInfo",
