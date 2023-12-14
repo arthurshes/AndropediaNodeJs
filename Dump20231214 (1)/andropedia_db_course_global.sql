@@ -45,7 +45,7 @@ CREATE TABLE `course_global` (
 
 LOCK TABLES `course_global` WRITE;
 /*!40000 ALTER TABLE `course_global` DISABLE KEYS */;
-INSERT INTO `course_global` VALUES (1,1,'2023-10-31',9,'Базовый',0,1,1,'rus','В этом курсе ты узнаешь основы языка программирования kotlin!',0,0),(2,3,'2023-10-31',6,'Углубленный',1,1,0,'rus','Подними свои знания на профессианальный уровень',600,700),(3,1,'2023-10-31',9,'Basic',0,1,1,'eng','In this course, you will learn the basics of the Kotlin programming language!',0,0),(4,3,'2023-10-31',6,'In-depth',1,1,0,'eng','Elevate your knowledge to a professional level',600,700),(5,2,'2023-11-29',6,'Продвинутый',1,1,0,'rus','Узнай android разработку лучше!',150,240),(6,2,'2023-11-29',6,'Advanced',1,1,0,'eng','Learn Android development better!',150,240);
+INSERT INTO `course_global` VALUES (1,1,'2023-10-31',9,'Базовый',0,1,1,'rus','В этом курсе ты узнаешь основы языка программирования kotlin!',0,0),(2,3,'2023-10-31',6,'Углубленный',1,1,0,'rus','Подними свои знания на профессианальный уровень',600,200),(3,1,'2023-10-31',9,'Basic',0,1,1,'eng','In this course, you will learn the basics of the Kotlin programming language!',0,0),(4,3,'2023-10-31',6,'In-depth',1,1,0,'eng','Elevate your knowledge to a professional level',600,200),(5,2,'2023-11-29',6,'Продвинутый',1,1,0,'rus','Узнай android разработку лучше!',150,175),(6,2,'2023-11-29',6,'Advanced',1,1,0,'eng','Learn Android development better!',150,175);
 /*!40000 ALTER TABLE `course_global` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-07 21:03:47
+-- Dump completed on 2023-12-14 14:26:03

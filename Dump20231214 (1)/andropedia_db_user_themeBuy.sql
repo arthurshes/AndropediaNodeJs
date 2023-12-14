@@ -16,31 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `interactives`
+-- Table structure for table `user_themeBuy`
 --
 
-DROP TABLE IF EXISTS `interactives`;
+DROP TABLE IF EXISTS `user_themeBuy`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `interactives` (
+CREATE TABLE `user_themeBuy` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `interactiveTestId` int NOT NULL,
-  `uniqueThemeId` int NOT NULL,
-  `lastUpdateDate` date NOT NULL,
-  `taskId` int NOT NULL,
-  `taskDetailsText` text NOT NULL,
-  `language` text NOT NULL,
+  `token` text NOT NULL,
+  `courseNumber` int NOT NULL,
+  `uniqueThemeId` text NOT NULL,
+  `themeNumber` text NOT NULL,
+  `dateBuyApi` text NOT NULL,
+  `promoCode` text,
+  `transactionId` text NOT NULL,
+  `andropointBuy` tinyint(1) NOT NULL,
+  `  dateBuyForDate` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `interactives`
+-- Dumping data for table `user_themeBuy`
 --
 
-LOCK TABLES `interactives` WRITE;
-/*!40000 ALTER TABLE `interactives` DISABLE KEYS */;
-/*!40000 ALTER TABLE `interactives` ENABLE KEYS */;
+LOCK TABLES `user_themeBuy` WRITE;
+/*!40000 ALTER TABLE `user_themeBuy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_themeBuy` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-07 21:03:47
+-- Dump completed on 2023-12-14 14:26:03

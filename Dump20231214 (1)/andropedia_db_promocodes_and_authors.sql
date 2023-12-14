@@ -16,31 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_courseBuy`
+-- Table structure for table `promocodes_and_authors`
 --
 
-DROP TABLE IF EXISTS `user_courseBuy`;
+DROP TABLE IF EXISTS `promocodes_and_authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_courseBuy` (
+CREATE TABLE `promocodes_and_authors` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `token` text NOT NULL,
-  `courseNumber` int NOT NULL,
-  `dateBuy` text NOT NULL,
-  `promoCode` text,
-  `transactionId` text NOT NULL,
-  `andropointBuy` tinyint(1) NOT NULL,
+  `promoCode` text NOT NULL,
+  `author_name` text NOT NULL,
+  `author_token` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_courseBuy`
+-- Dumping data for table `promocodes_and_authors`
 --
 
-LOCK TABLES `user_courseBuy` WRITE;
-/*!40000 ALTER TABLE `user_courseBuy` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_courseBuy` ENABLE KEYS */;
+LOCK TABLES `promocodes_and_authors` WRITE;
+/*!40000 ALTER TABLE `promocodes_and_authors` DISABLE KEYS */;
+INSERT INTO `promocodes_and_authors` VALUES (1,'TESTARTUR','artur a','btrgbtdsrgbdsrtgb');
+/*!40000 ALTER TABLE `promocodes_and_authors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-07 21:03:48
+-- Dump completed on 2023-12-14 14:26:02
